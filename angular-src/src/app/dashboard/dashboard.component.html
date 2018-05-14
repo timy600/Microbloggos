@@ -1,0 +1,115 @@
+
+
+
+<!--
+<br>
+<div class="card text-white bg-primary mb-3" style="max-width: 40rem;"  *ngIf="messageAdded">
+  <div class="card-header">Message Added</div>
+  <div class="card-body">
+    <h4 class="card-title">{{messageAddedTitle}}</h4>
+    <p class="card-text">{{messageAdded}}</p>
+  </div>
+</div>
+
+<br>
+<div class="card text-white bg-primary mb-3" style="max-width: 40rem;"  *ngFor="let result of results">
+  <div class="card-header">User profile</div>
+  <div class="card-body">
+    <h4 class="card-title">Name: {{result.name}}</h4>
+    <p class="card-text">Email: {{result.email}}</p>
+    <p class="card-text">Username: {{result.username}}</p>
+  </div>
+</div>
+-->
+
+<br>
+<h2>Welcome back to your Dashboard</h2>
+<p>Here you can publish new messages limited to 140 characters, see who you are following, see who is following you, and update your profil.</p>
+<br>
+
+<div id="menu-tab">
+  <div id="page-wrap">
+    <div class="tabs">
+      <div class="tab">
+        <input id="tab-1" checked="checked" name="tab-group-1" type="radio" />
+        <label type="button" class="btn btn-secondary" for="tab-1">Publish a message</label>
+        <div class="content">
+          <div class="card-header">New Message</div>
+          <div class="card-body">
+            <h4 class="card-title">Express yourself</h4>
+            <form (submit)="onAddMessage()">
+            <div class="form-group">
+              <input class="form-control" [(ngModel)]="title" name="title" id="title" placeholder="Title" type="text"  maxlength="50">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" [(ngModel)]="content" name="content" id="exampleTextarea" rows="3" maxlength="140"></textarea>
+            </div>
+            <!--
+            <div *ngIf="messageAddedHashtags">
+              <p>{{ messageAddedHashtags }}</p>
+            </div>
+            <div class="form-group">
+              <input class="form-control" [(ngModel)]="hashtags" name="hashtags" id="hashtags" placeholder="Hashtags" type="text" maxlength="40">
+            </div>
+            <button type="button" class="btn btn-secondary" (click)="onAddHashtag()">Add Hashtag</button>
+            <button type="button" class="btn btn-secondary" (click)="onNoHashtag()">Delete Hashtag</button>
+-->
+            <input type="submit" class="btn btn-primary" value="Submit">
+          </form>
+          </div>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-2" name="tab-group-1" type="radio" />
+        <label type="button" class="btn btn-secondary" for="tab-2">Your Followers</label>
+        <div class="content">
+          <div class="card-header">The people following you</div>
+          <div class="card-body">
+            <h4 class="card-title">Feeling kinda lonely...</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <input id="tab-3" name="tab-group-1" type="radio" />
+        <label type="button" class="btn btn-secondary" for="tab-3">Who you Follow</label>
+        <div class="content">
+          <div class="card-header">Here are the people you are following</div>
+          <div class="card-body">
+            <h4 class="card-title">Not a bunch of folks so far...</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <input id="tab-4" name="tab-group-1" type="radio" />
+        <label type="button" class="btn btn-secondary" for="tab-4">Update your profile</label>
+        <div class="content">
+          <div class="card-header">Wanna update your profil?</div>
+          <div class="card-body">
+            <h4 class="card-title">DO IT! JUST DO IT!</h4>
+              <form (submit)="onAddMessage()">
+              <div class="form-group">
+                <input class="form-control" [(ngModel)]="name" name="name" id="name" placeholder="Name" type="text"  maxlength="50">
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" [(ngModel)]="description" name="description" id="exampleTextarea" rows="3" maxlength="140"></textarea>
+              </div>
+              <!--
+              <div *ngIf="messageAddedHashtags">
+                <p>{{ messageAddedHashtags }}</p>
+              </div>
+              <div class="form-group">
+                <input class="form-control" [(ngModel)]="hashtags" name="hashtags" id="hashtags" placeholder="Hashtags" type="text" maxlength="40">
+              </div>
+              <button type="button" class="btn btn-secondary" (click)="onAddHashtag()">Add Hashtag</button>
+              <button type="button" class="btn btn-secondary" (click)="onNoHashtag()">Delete Hashtag</button>
+  -->
+              <input type="submit" class="btn btn-primary" value="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>

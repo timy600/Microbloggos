@@ -1,0 +1,117 @@
+
+<div class="jumbotron text-center">
+  <div class="card text-white bg-primary mb-3" style="max-width: 40rem;"  *ngFor="let message of messages">
+    <div class="card-header">
+      <div class="d-flex w-100 justify-content-between">
+        <img style="height: 60px; width: 60px; border-radius: 50%; border: 2px solid #ddd; display: block;" src="/assets/vinci_hermine.jpg" alt="Card image">
+        <h4 class="card-title">{{message.author_id}}</h4>
+      </div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{message.title}}</h5>
+      <p class="card-text">{{message.content}}</p>
+    </div>
+  </div>
+
+  <div class="card text-white bg-primary mb-3" style="max-width: 40rem;"  *ngFor="let msg of msgs">
+    <div class="card-header">
+      <div class="d-flex w-100 justify-content-between">
+        <img style="height: 60px; width: 60px; border-radius: 50%; border: 2px solid #ddd; display: block;" src="/assets/hokusai_manga.jpg" alt="Card image">
+        <h4 class="card-title">{{msg.author_id}}</h4>
+      </div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{msg.title}}</h5>
+      <p class="card-text">{{msg.content}}</p>
+    </div>
+  </div>
+
+  <div class="card text-black bg-info mb-3" style="max-width: 40rem;"  *ngFor="let realmsg of realmsgs">
+    <div class="card-header">
+      <div class="d-flex w-100 justify-content-between">
+        <h4 class="card-title">{{realmsg.username}}</h4>
+        <h5 class="card-title">{{realmsg.title}}</h5>
+        <img style="height: 60px; width: 60px; border-radius: 50%; border: 2px solid #ddd; display: block;" src="/assets/auteur_default.png" alt="Card image">
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{realmsg.content}}</p>
+    </div>
+    <div class="card-footer text-muted">
+      <div class="d-flex w-100 justify-content-between">
+        <small >Published: {{realmsg.published}}</small>
+        <p class="card-text">Hashtags: {{realmsg.hashtags}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card text-white bg-success mb-3" style="max-width: 40rem;"  *ngIf="messageAdded">
+    <div class="card-header">Message Added</div>
+    <div class="card-body">
+      <h4 class="card-title">{{messageAddedTitle}}</h4>
+      <p class="card-text">{{messageAdded}}</p>
+    </div>
+  </div>
+
+  <div class="card border-primary mb-3" style="max-width: 40rem;">
+    <div class="card-header">New Message</div>
+    <div class="card-body">
+      <h4 class="card-title">Express yourself</h4>
+      <form (submit)="addMessage()">
+      <div class="form-group">
+        <input class="form-control" [(ngModel)]="messageAddedTitle" name="messageAddedTitle" id="messageAddedTitle" placeholder="Title" type="text"  maxlength="50">
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" [(ngModel)]="messageAdded" name="messageAdded" id="exampleTextarea" rows="3" maxlength="140"></textarea>
+      </div>
+      <div *ngIf="messageAddedHashtags">
+        <p>{{ messageAddedHashtags }}</p>
+      </div>
+      <div class="form-group">
+        <input class="form-control" [(ngModel)]="messageAddedHashtag" name="messageAddedHashtag" id="messageAddedHashtag" placeholder="Hashtags" type="text" maxlength="40">
+      </div>
+      <button type="button" class="btn btn-secondary" (click)="onAddHashtag()">Add Hashtag</button>
+      <button type="button" class="btn btn-secondary" (click)="onNoHashtag()">Delete Hashtag</button>
+      <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+    </div>
+  </div>
+
+  <div class="modal">
+    <!--
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  -->
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-4">
+    <h3>Express Backend</h3>
+    <p>A rock solid Node.js/Express server using Mongoose to organize models and query the database</p>
+  </div>
+  <div class="col-md-4">
+    <h3>Angular-CLI</h3>
+    <p>Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>
+  </div>
+  <div class="col-md-4">
+    <h3>JWT Tokens</h3>
+    <p>Full featured authentication using JSON web tokens. Login and store user data</p>
+  </div>
+</div>

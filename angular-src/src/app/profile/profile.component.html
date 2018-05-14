@@ -1,0 +1,109 @@
+
+<div *ngIf="user">
+  <br>
+  <h2 class="page-header">{{user.name}}</h2>
+  <img style="height: 60px; width: 60px; border-radius: 10%; border: 2px solid #ddd; display: block;" src="/assets/trump_round.jpg" alt="Card image">
+  <ul class="list-group">
+    <!--
+    <li class="list-group-item">Username : {{user.username}}</li>
+    <li class="list-group-item">Email : {{user.email}}</li>
+  -->
+  </ul>
+</div>
+<br>
+
+<!--
+<div class="row">
+  <div class="col-md-4">
+    <img style="height: 160px; width: 160px; border-radius: 10%; border: 2px solid #ddd; display: block;" src="/assets/vinci_hermine.jpg" alt="Card image">
+  </div>
+  <div class="col-md-8">
+    <h3>Angular-CLI</h3>
+    <ul class="list-group">
+      <li class="list-group-item">Username : {{user.username}}</li>
+      <li class="list-group-item">Email : {{user.email}}</li>
+      <li class="list-group-item">Registered since : {{user.email}}</li>
+      <li class="list-group-item">Description : {{user.description}}</li>
+    </ul>
+  </div>
+</div>
+-->
+<br>
+
+
+<!-- TEST AVEC Hokusai-->
+<br>
+<div class="card mb-3">
+  <h3 class="card-header">Username : {{user.username}}</h3>
+  <div class="row">
+    <div class="col-md-3">
+      <br>
+      <img style="margin-left: 10px; height: 160px; width: 160px; border-radius: 10%; border: 2px solid #ddd; display: block;" src="/assets/hokusai_manga.jpg" alt="Card image">
+      <br>
+    </div>
+    <div class="col-md-8">
+      <h3 style="margin-top: 20px">Profile</h3>
+      <ul class="list-group">
+        <li class="list-group-item">Username : {{user.username}}</li>
+        <li class="list-group-item">Email : {{user.email}}</li>
+        <li class="list-group-item">Registered since : {{user.email}}</li>
+        <li class="list-group-item">Description : {{user.description}}</li>
+      </ul>
+      <br>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    <button type="button" class="btn btn-secondary" >Update</button>
+    <button type="button" class="btn btn-primary" >Follow</button>
+  </div>
+</div>
+
+<!-- AVEC LES VRAIES DONNEES-->
+<div class="card mb-3" *ngFor="let realuser of realusers">
+  <h3 class="card-header">{{realuser.name}}</h3>
+  <div class="row">
+    <div class="col-md-3">
+      <br>
+      <img style="margin-left: 10px; height: 160px; width: 160px; border-radius: 10%; border: 2px solid #ddd; display: block;" src="/assets/auteur_default.png" alt="Card image">
+      <br>
+    </div>
+    <div class="col-md-8">
+      <h3 style="margin-top: 20px">Profil</h3>
+      <ul class="list-group">
+        <li class="list-group-item">Username : {{realuser.username}}</li>
+        <li class="list-group-item">Email : {{realuser.email}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    <button type="button" class="btn btn-secondary" >Update</button>
+    <button type="button" class="btn btn-primary" >Follow</button>
+  </div>
+</div>
+
+
+<!-- TEST AVEC LES PROFILS MOCK-->
+<!--
+<br>
+<div class="card mb-3" *ngFor="let mockuser of mockusers">
+  <h3 class="card-header">{{mockuser.name}}</h3>
+  <div class="row">
+    <div class="col-md-3">
+      <br>
+      <img style="margin-left: 10px; height: 160px; width: 160px; border-radius: 10%; border: 2px solid #ddd; display: block;" src="/assets/trump_roundddd.jpg" alt="Card image">
+      <br>
+    </div>
+    <div class="col-md-8">
+      <h3 style="margin-top: 20px">Profile</h3>
+      <ul class="list-group">
+        <li class="list-group-item">Username : {{mockuser.username}}</li>
+        <li class="list-group-item">Email : {{mockuser.email}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    <button type="button" class="btn btn-secondary" >Update</button>
+    <button type="button" class="btn btn-primary" >Follow</button>
+  </div>
+</div>
+-->
